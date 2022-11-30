@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap-5.2.3-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./bootstrap-5.2.3-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./bootstrap-5.2.3-dist/css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="./bootstrap-5.2.3-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./templateroom.css">
+    <title>Escape Room</title>
+</head>
+
+<body>
+    <!-- Navbar mit Zurueck Button -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <button type="button" class="btn btn-light"
+                onclick="location.href = 'http://127.0.0.1:5500/src/index.html';">
+                Zurück
+            </button>
+            <button id="check-btn" type="button" class="btn btn-primary" id="liveAlertBtn">Prüfe Antwort</button>
+        </div>
+    </nav>
+
+    <!-- Flexbox Vertikal -->
+    <div class="d-flex flex-column m-5">
+
+        <!-- Flexbox Horizontal -->
+        <div class="d-flex flex-row mb-3">
+            <div class="p-2">Flex item 1</div>
+            <div class="p-2">Flex item 2</div>
+            <div class="p-2">Flex item 3</div>
+        </div>
+
+        <!-- Flexbox Horizontal -->
+        <div class="d-flex flex-row mb-3">
+            <div class="p-2">Flex item 1</div>
+            <div class="p-2">Flex item 2</div>
+            <div class="p-2">Flex item 3</div>
+        </div>
+
+    </div>
+
+    <!-- Alertbox -->
+    <div id="liveAlertPlaceholder" class="bottom_fixed"></div>
+</body>
+
+<script>
+    // Pruefe Antwort und gebe ein Alert aus
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+    const alert = (message, type) => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+            `<div id="alert" class="alert alert-${type} fadeout hidden" role="alert">`,
+            `${message}`,
+            `</div>`
+
+        ].join('')
+
+        alertPlaceholder.append(wrapper)
+    }
+
+    const alertTrigger = document.getElementById('liveAlertBtn')
+    if (alertTrigger) {
+        alertTrigger.addEventListener('click', () => {
+            alert('Nice, you triggered this alert message!', 'success')
+        })
+    }
+
+
+
+    // const btn = document.getElementById('check-btn');
+    // const promptedAlert = document.getElementById('alert');
+
+    // btn.addEventListener('click', () => {
+
+    //     alert.classList.remove('hidden');
+
+    //     setTimeout(() => {
+    //         alert.classList.add('hidden');
+    //     }, 2000)
+
+    // })
+
+</script>
+
+</html>
