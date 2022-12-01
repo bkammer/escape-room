@@ -21,7 +21,7 @@
                 onclick="location.href = 'http://127.0.0.1:5500/src/index.html';">
                 Zurück
             </button>
-            <button id="check-btn" type="button" class="btn btn-primary" id="liveAlertBtn">Prüfe Antwort</button>
+            <button type="button" class="btn btn-primary" id="liveAlertBtn">Prüfe Antwort</button>
         </div>
     </nav>
 
@@ -54,7 +54,7 @@
     const alert = (message, type) => {
         const wrapper = document.createElement('div')
         wrapper.innerHTML = [
-            `<div id="alert" class="alert alert-${type} fadeout hidden" role="alert">`,
+            `<div id="alert" class="alert alert-${type} fadeout" role="alert">`,
             `${message}`,
             `</div>`
 
@@ -66,24 +66,21 @@
     const alertTrigger = document.getElementById('liveAlertBtn')
     if (alertTrigger) {
         alertTrigger.addEventListener('click', () => {
-            alert('Nice, you triggered this alert message!', 'success')
+
+            // Entferne alten Alert falls einer existiert
+            var oldAlert = document.getElementById('alert');
+            
+            if(oldAlert !== null)
+                oldAlert.remove();
+
+            // Erstelle neuen Alert und entferne ihn nach 5 Sekunden
+            alert('Nice, you triggered this alert message!', 'success');
+            var currentAlert = document.getElementById('alert');
+            setTimeout(() => {
+                currentAlert.remove();
+            }, 5000)
         })
     }
-
-
-
-    // const btn = document.getElementById('check-btn');
-    // const promptedAlert = document.getElementById('alert');
-
-    // btn.addEventListener('click', () => {
-
-    //     alert.classList.remove('hidden');
-
-    //     setTimeout(() => {
-    //         alert.classList.add('hidden');
-    //     }, 2000)
-
-    // })
 
 </script>
 
