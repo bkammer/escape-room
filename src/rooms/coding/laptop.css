@@ -1,0 +1,82 @@
+/* The laptop with borders */
+.laptop {
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  transform: scale(0.6) translate(-50%); /* Scaled down for a better Try-it experience (change to 1 for full scale) */
+  left: 50%;
+  position: absolute;
+  width: 1366px;
+  height: 800px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: rgb(68, 68, 68);
+  border-width: 24px 24px 80px;
+  background-color: black;
+  background-image: url('./windowsLogin.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+/* The keyboard of the laptop */
+.laptop:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1600px;
+  height: 60px;
+  margin: 80px 0 0 -110px;
+  background: rgb(68, 68, 68);
+  border-radius: 6px;
+}
+
+/* The top of the keyboard */
+.laptop:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  bottom: -110px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  background: #f1f1f1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+}
+
+/* The screen (or content) of the device */
+.laptop .laptop-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: none;
+}
+
+#username {
+  position: relative;
+  top: 356px;
+  left: 502px;
+  height: 40px;
+  width: 315px;
+}
+
+#password {
+  position: relative;
+  top: 372px;
+  left: 502px;
+  height: 40px;
+  width: 315px;
+}
+
+#submit {
+  position: relative;
+  top: 332px;
+  left: 776px;
+  height: 39px;
+  width: 40px;
+  border: none;
+}
