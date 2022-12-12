@@ -1,5 +1,11 @@
+.postit-container {
+    margin: 3rem auto;
+    width: 170px;
+    height: 150px;
+}
+
 .postit {
-  margin: 3rem;
+  margin-left: -320px;
   width: 170px;
   height: 150px;
   padding: 25px 15px;
