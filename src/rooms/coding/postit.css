@@ -1,0 +1,66 @@
+.postit {
+  margin: 3rem;
+  width: 170px;
+  height: 150px;
+  padding: 25px 15px;
+  background: #fefabc;
+  background: #fefabc linear-gradient(150deg, #efec88 0%, #fefabc 100%);
+  border: 1px solid #cccccc;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  transform: rotate(4deg);
+}
+
+.postit h1,
+.postit p {
+  font-family: "DPDorkDiary", cursive;
+  font-size: 1.4em;
+  text-align: center;
+  margin: 0.5em 0 0;
+  line-height: 1em;
+  font-weight: bold;
+}
+
+.postit p {
+  font-size: 1.1em;
+  margin: 0.5em 0;
+}
+
+.postit::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.025);
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0;
+  height: 40px;
+  z-index: -1;
+}
+
+.notes::before {
+  background: #ff8c00
+    radial-gradient(at 8px 8px, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: calc(50% - 12px);
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+.postit::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -4px;
+  width: 100%;
+  height: 140px;
+  background-image: linear-gradient(
+    173deg,
+    rgba(0, 0, 0, 0) 92%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  transform: rotate(6deg);
+  z-index: -1;
+  filter: blur(2px);
+}

@@ -11,7 +11,7 @@ winloginform.addEventListener("submit", (e) => {
     messages.push("Name ist required");
   }
 
-  if (username.value === "susan" && password.value === "random123") {
+  if (username.value === "tom" && password.value === "zufall123") {
     document.getElementById("laptop").style.backgroundImage =
       "url(./coding/desktop.png)";
     username.style.display = "none";
