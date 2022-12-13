@@ -32,5 +32,4 @@ cform.addEventListener("submit", (e) => {
       currentAlert.remove();
     }, 5000);
   }
-  // Handle else case
 });

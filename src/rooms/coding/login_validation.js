@@ -2,7 +2,6 @@ const username = document.getElementById("username");
 const password = document.getElementById("password");
 const submit = document.getElementById("submit");
 const winloginform = document.getElementById("win-login-form");
-const errorElement = document.getElementById("error");
 
 winloginform.addEventListener("submit", (e) => {
   e.preventDefault()
@@ -19,11 +18,14 @@ winloginform.addEventListener("submit", (e) => {
     }, 5000);
   }
   else if (username.value === "tom" && password.value === "zufall123") {
+    // Change background image
     document.getElementById("laptop").style.backgroundImage =
       "url(./coding/desktop.png)";
+    // Remove login form
     username.style.display = "none";
     password.style.display = "none";
     submit.style.display = "none";
+
     var oldAlert = document.getElementById("alert");
 
     if (oldAlert !== null) oldAlert.remove();

@@ -26,37 +26,38 @@
             </button>
         </div>
     </nav>
+    <div class="mx-3">
+        <h1>Coding Room</h1>
+        <p>
+            Du hast aus dem Sperrmüll einen alten Laptop gezogen. Als du diesen anschaltest kommst du zur Anmeldung,
+            weißt jedoch die Anmeldedaten nicht. Jedoch klebt am Laptop ein Postit...
+        </p>
 
-    <h1 class="mx-3">Coding Room</h1>
+        <!-- Alertbox -->
+        <div id="liveAlertPlaceholder"></div>
 
-    <p class="mx-3">
-        Aus dem Sperrmüll hast du einen alten Laptop gezogen. Als du diesen anschaltest kommst du auf die Anmeldeseite,
-        weißt jedoch nicht wie die Anmeldedate lauten. Lediglich ein Zettel auf der Rückseite ist dazu zu finden.
-    </p>
+        <div class="laptop" id="laptop">
+            <div class="laptop-content">
+                <form id="win-login-form">
+                    <div>
+                        <input id="username" placeholder="username">
+                    </div>
+                    <div>
+                        <input type="password" id="password" placeholder="password">
+                    </div>
+                    <button type="submit" id="submit">></button>
+                </form>
+            </div>
+        </div>
 
-    <div class="laptop" id="laptop">
-        <div class="laptop-content">
-            <form id="win-login-form">
-                <div>
-                    <input id="username" placeholder="username">
-                </div>
-                <div>
-                    <input type="password" id="password" placeholder="password">
-                </div>
-                <button type="submit" id="submit">></button>
-            </form>
+        <div class="postit-container">
+            <div class="postit">
+                <h1>Tom Müller</h1>
+                <p>zufällig bis 3</p>
+                <p>zusammen - alles klein</p>
+            </div>
         </div>
     </div>
-    <div class="postit-container">
-        <div class="postit">
-            <h1>Tom Müller</h1>
-            <p>zufällig bis 3</p>
-            <p>zusammen - alles klein</p>
-        </div>
-    </div>
-
-    <!-- Alertbox -->
-    <div id="liveAlertPlaceholder" class="bottom_fixed"></div>
 
     <script>
         // Pruefe Antwort und gebe ein Alert aus

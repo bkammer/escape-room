@@ -23,12 +23,14 @@
             <button type="button" class="btn btn-light" onclick="location.href = '../index.html';">
                 Zurück
             </button>
-            <button type="button" class="btn btn-primary" id="liveAlertBtn">Prüfe Antwort</button>
         </div>
     </nav>
     <div class="mx-3">
         <h1>Chemie</h1>
         <p>Aufgabenstellung:</p>
+
+        <!-- Alertbox -->
+        <div id="liveAlertPlaceholder"></div>
 
         <img src="./chemie/periodensystem.png" class="img-fluid" alt="periodensystem">
 
@@ -47,12 +49,10 @@
         </form>
     </div>
 
-    <!-- Alertbox -->
-    <div id="liveAlertPlaceholder" class="bottom_fixed"></div>
 </body>
 
 <script>
-    // Pruefe Antwort und gebe ein Alert aus
+    // Alert script
     const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
     const alert = (message, type) => {
         const wrapper = document.createElement('div')
@@ -60,31 +60,9 @@
             `<div id="alert" class="alert alert-${type} fadeout" role="alert">`,
             `${message}`,
             `</div>`
-
         ].join('')
-
         alertPlaceholder.append(wrapper)
     }
-
-    const alertTrigger = document.getElementById('liveAlertBtn')
-    if (alertTrigger) {
-        alertTrigger.addEventListener('click', () => {
-
-            // Entferne alten Alert falls einer existiert
-            var oldAlert = document.getElementById('alert');
-
-            if (oldAlert !== null)
-                oldAlert.remove();
-
-            // Erstelle neuen Alert und entferne ihn nach 5 Sekunden
-            alert('Nice, you triggered this alert message!', 'success');
-            var currentAlert = document.getElementById('alert');
-            setTimeout(() => {
-                currentAlert.remove();
-            }, 5000)
-        })
-    }
-
 </script>
 
 </html>
