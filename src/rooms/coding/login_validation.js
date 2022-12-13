@@ -6,12 +6,19 @@ const errorElement = document.getElementById("error");
 
 winloginform.addEventListener("submit", (e) => {
   e.preventDefault()
-  let messages = [];
   if (username.value === "" || username.value == null) {
-    messages.push("Name ist required");
-  }
+    var oldAlert = document.getElementById("alert");
 
-  if (username.value === "tom" && password.value === "zufall123") {
+    if (oldAlert !== null) oldAlert.remove();
+
+    // Erstelle neuen Alert und entferne ihn nach 5 Sekunden
+    alert("Name ist required!", "danger");
+    var currentAlert = document.getElementById("alert");
+    setTimeout(() => {
+      currentAlert.remove();
+    }, 5000);
+  }
+  else if (username.value === "tom" && password.value === "zufall123") {
     document.getElementById("laptop").style.backgroundImage =
       "url(./coding/desktop.png)";
     username.style.display = "none";
@@ -26,21 +33,19 @@ winloginform.addEventListener("submit", (e) => {
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
       currentAlert.remove();
+      window.location.assign("../index.html");
     }, 5000);
   }
-
-  if (messages.length > 0) {
+  else {
     var oldAlert = document.getElementById("alert");
 
     if (oldAlert !== null) oldAlert.remove();
 
     // Erstelle neuen Alert und entferne ihn nach 5 Sekunden
-    alert("Nice, you logged into the laptop!", "success");
+    alert("Wrong username or password!", "danger");
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
       currentAlert.remove();
     }, 5000);
-    errorElement.innerText = messages.join(", ");
   }
-  e.preventDefault();
 });
