@@ -17,7 +17,7 @@ cform.addEventListener("submit", (e) => {
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
       currentAlert.remove();
-      window.location.assign("../index.html");
+      window.location.assign("/index.html");
     }, 5000);
   }
   else {

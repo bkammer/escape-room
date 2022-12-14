@@ -20,7 +20,7 @@ winloginform.addEventListener("submit", (e) => {
   else if (username.value === "tom" && password.value === "zufall123") {
     // Change background image
     document.getElementById("laptop").style.backgroundImage =
-      "url(./coding/desktop.png)";
+      "url(/rooms/coding/desktop.png)";
     // Remove login form
     username.style.display = "none";
     password.style.display = "none";
@@ -35,7 +35,7 @@ winloginform.addEventListener("submit", (e) => {
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
       currentAlert.remove();
-      window.location.assign("../index.html");
+      window.location.assign("/index.html");
     }, 5000);
   }
   else {
