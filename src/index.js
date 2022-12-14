@@ -1,11 +1,6 @@
 function startTimer() {
-  localStorage.clear();
   initCoins();
   setStartTimeNow();
+  initRoomStatus();
   window.location.assign("/home.html");
-}
-
-function reset() {
-  removeTimer();
-  removeCoins();
 }

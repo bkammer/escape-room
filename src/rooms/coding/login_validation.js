@@ -4,7 +4,7 @@ const submit = document.getElementById("submit");
 const winloginform = document.getElementById("win-login-form");
 
 winloginform.addEventListener("submit", (e) => {
-  e.preventDefault()
+  e.preventDefault();
   if (username.value === "" || username.value == null) {
     var oldAlert = document.getElementById("alert");
 
@@ -16,8 +16,7 @@ winloginform.addEventListener("submit", (e) => {
     setTimeout(() => {
       currentAlert.remove();
     }, 5000);
-  }
-  else if (username.value === "tom" && password.value === "zufall123") {
+  } else if (username.value === "tom" && password.value === "zufall123") {
     // Change background image
     document.getElementById("laptop").style.backgroundImage =
       "url(/rooms/coding/desktop.png)";
@@ -30,15 +29,18 @@ winloginform.addEventListener("submit", (e) => {
 
     if (oldAlert !== null) oldAlert.remove();
 
+    setRoomStatusDone(2);
+
     // Erstelle neuen Alert und entferne ihn nach 5 Sekunden
     alert("Nice, you logged into the laptop!", "success");
+
+    window.localStorage.setItem("coding-finish", true);
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
       currentAlert.remove();
       window.location.assign("/home.html");
     }, 5000);
-  }
-  else {
+  } else {
     var oldAlert = document.getElementById("alert");
 
     if (oldAlert !== null) oldAlert.remove();
