@@ -1,3 +1,12 @@
+function removeTimer() {
+  window.localStorage.removeItem("startDate");
+  document.getElementById("timer").innerHTML = "--d --h --m --s";
+}
+
+function setStartTimeNow() {
+  window.localStorage.setItem("startDate", new Date().getTime());
+}
+
 // Update the count down every 1 second
 var x = setInterval(function () {
   if (window.localStorage.getItem("startDate") === null) {
@@ -26,9 +35,7 @@ var x = setInterval(function () {
   if (minutes > 0 || hours > 0 || days > 0) {
     time = time + minutes + "m ";
   }
-  if (seconds > 0 || minutes > 0 || hours > 0 || days > 0) {
-    time = time + seconds + "s ";
-  }
+  time = time + seconds + "s ";
 
   // Display the result in the element with id="timer"
   document.getElementById("timer").innerHTML = time;

@@ -1,12 +1,11 @@
 function startTimer() {
-    localStorage.clear();
-    // Set the date we're counting down to
-    window.localStorage.setItem("startDate", new Date().getTime());
-    console.log("Start timestamp set.")
-    window.location.assign("/home.html");
-  }
-  
-  function reset() {
-    localStorage.clear();
-  }
-  
+  localStorage.clear();
+  initCoins();
+  setStartTimeNow();
+  window.location.assign("/home.html");
+}
+
+function reset() {
+  removeTimer();
+  removeCoins();
+}
