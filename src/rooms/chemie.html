@@ -75,20 +75,19 @@
         </form>
     </div>
 
+    <script>
+        // Alert script
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        const alert = (message, type) => {
+            const wrapper = document.createElement('div')
+            wrapper.innerHTML = [
+                `<div id="alert" class="alert alert-${type} fadeout" role="alert">`,
+                `${message}`,
+                `</div>`
+            ].join('')
+            alertPlaceholder.append(wrapper)
+        }
+    </script>
 </body>
-
-<script>
-    // Alert script
-    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-    const alert = (message, type) => {
-        const wrapper = document.createElement('div')
-        wrapper.innerHTML = [
-            `<div id="alert" class="alert alert-${type} fadeout" role="alert">`,
-            `${message}`,
-            `</div>`
-        ].join('')
-        alertPlaceholder.append(wrapper)
-    }
-</script>
 
 </html>
