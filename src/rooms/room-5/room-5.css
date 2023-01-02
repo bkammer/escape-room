@@ -1,0 +1,15 @@
+.term {
+    background-color: rgb(124, 124, 124);
+    padding: 0.5rem 1rem;
+    margin-left: 2rem;
+    border: solid 0.2rem rgb(165, 165, 165);
+    
+    color: rgb(206, 206, 206);
+    font-weight: bold;
+    width: fit-content;
+}
+
+input {
+    width: 50%;
+    max-width: 300px;
+}

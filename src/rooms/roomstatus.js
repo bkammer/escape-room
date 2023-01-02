@@ -1,5 +1,5 @@
 const rooms = [];
-rooms.length = 5;
+rooms.length = 6;
 
 function initRoomStatus() {
   for (let i = 0; i < rooms.length; i++) {
