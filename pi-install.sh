@@ -3,7 +3,7 @@
 if [ "$(whoami)" != "root" ]
 then
     echo "Bitte geben Sie Ihr Passwort ein, wenn Sie dazu aufgefordert werden."
-    sudo su -s "$0"
+    sudo su
     exit
 fi
 
