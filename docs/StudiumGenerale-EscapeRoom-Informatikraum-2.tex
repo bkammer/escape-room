@@ -19,7 +19,7 @@
 
     \begin{center}
         \textbf{\large Studium Generale: Escape-Room}\\
-        Dokumentation: Informatik-Raum-2
+        Dokumentation: Informatikraum 2
     \end{center}
 
     \rule{\linewidth}{0.1mm}
@@ -39,9 +39,11 @@
     \item Mikro-SD Karte
 	\item Computer Maus
 	\item Mikro-HDMI auf HDMI Kabel
-	\item Monitor / Bildschirm
+	\item Monitor/Bildschirm
     \item Computer mit SD-Kartensteckplatz
 \end{itemize}
+
+Die meisten Komponenten können als Raspberry Pi Kit\footnote{https://www.welectron.com/Raspberry-Pi-400-Computer-Kit-DE?src=raspberrypi} bei Welectron gekauft werden.
 
 \subsection{Präparation des Raspberry Pis}
 
@@ -65,6 +67,7 @@ curl -sSL https://raw.githubusercontent.com/bkammer/escape-room/main/pi-install.
 Diese Adresse ist nur auf dem Raspberry Pi bekannt und zeigt auf den Webserver, der im Hintergrund auf dem Raspberry Pi läuft.
 Damit ist zukünftig keine Internetverbindung mehr notwendig, um den digitalen Escaperoom zu spielen.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Durchführung}
 \subsection{Komponenten}
 
@@ -73,7 +76,7 @@ Damit ist zukünftig keine Internetverbindung mehr notwendig, um den digitalen E
     \item Mikro-HDMI Karte
 	\item Computer Maus
 	\item Mikro-HDMI auf HDMI Kabel
-	\item Monitor
+	\item Monitor/Bildschirm
 \end{itemize}
 
 \subsection{Ausgangszustand}
@@ -88,9 +91,8 @@ Innerhalb dieser Zeit müssen verschiedene Räume gelöst werden, um Münzen zu 
 Besitzt man genügend Münzen, so kann man sich aus dem Escape-Haus freikaufen.
 Schafft man es nicht, bis zum Ablaufen des Countdowns genügend Münzen zu sammeln und sich freizukaufen, so ist man gescheitert.
 
-\subsection{Informatikraum 2}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Informatikraum 2}
 
 \subsection{Erklärung}
 
@@ -100,7 +102,7 @@ Eine schematische Darstellung mit der Verschiebung um 3 Buchstaben ist in Grafik
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{caesar3}
-    \caption{Schematische Darstellung einer Verschiebe-Chiffre mit Verschiebung um drei Buchstaben (https://de.wikipedia.org/wiki/Caesar-Verschlüsselung)}
+    \caption{Schematische Darstellung einer Verschiebe-Chiffre mit Verschiebung um drei Buchstaben (Quelle: https://de.wikipedia.org/wiki/Caesar-Verschlüsselung)}
     \label{fig:caesar3}
 \end{figure}
 
@@ -115,6 +117,7 @@ Somit kann auf das verwendete Alphabet geschlossen werden.
 Die Genauigkeit der Häufigkeit steigt mit der Länge des Textes, womit ein langer Text leichter zu entschlüsseln ist als eine kurze.
 Damit dient die Caesar-Verschlüsslung ausschließlich dafür, Grundprinzipien der Kryptografie näherzubringen.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Weiterführende Links und Literatur}
 
 \begin{itemize}
@@ -123,7 +126,5 @@ Damit dient die Caesar-Verschlüsslung ausschließlich dafür, Grundprinzipien d
     \item https://de.wikipedia.org/wiki/Häufigkeitsanalyse
     \item https://de.wikipedia.org/wiki/Buchstabenhöufigkeit
 \end{itemize}
-
-\section{Rätselfrage}
 
 \end{document}
