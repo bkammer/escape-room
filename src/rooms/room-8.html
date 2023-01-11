@@ -49,15 +49,14 @@
             <h1>Informatikraum 2</h1>
             <p>
                 Marmorböden glänzen dir entgegen, hell erleuchtet von mehreren Fackeln, die im Zimmer aufgestellt
-                wurden.
-                Massive Marmorsäulen stützen die Decke, die hoch über dir schwebt. In der Mitte des Raums steht eine
-                überlebensgroße Statue eines Mannes. Er trägt eine römische Rüstung und einen Lorbeerkranz auf dem Kopf.
-                Du verstehst nicht ganz, warum er Gewürze auf dem Kopf trägt, gehst aber neugierig näher. Du hast
+                wurden. Massive Marmorsäulen stützen die Decke, die hoch über dir schwebt. In der Mitte des Raums steht
+                eine überlebensgroße Statue eines Mannes. Er trägt eine römische Rüstung und einen Lorbeerkranz auf dem
+                Kopf. Du verstehst nicht ganz, warum er Gewürze auf dem Kopf trägt, gehst aber neugierig näher. Du hast
                 bereits eine Vermutung, um wen es sich hier handeln könnte. Ein goldenes Schild am Sockel bestätigt
                 deine Vermutungen.
             </p>
             <div class="shadow p-3 mb-2 bg-body rounded">
-                Gaius Iulius Caesar<br>
+                Gaius Julius Caesar<br>
                 Gestorben am 15. März 44 v. Chr.
             </div>
             <p>
@@ -80,18 +79,17 @@
                 Nichts passiert. Na toll, wie machst du jetzt weiter?
             </p>
 
+            <!-- Alertbox -->
+            <div id="liveAlertPlaceholder"></div>
+
+            <form id="informatikroom-form">
+                <div class="mb-3">
+                    <label for="loesung" class="form-label">Lösung</label>
+                    <input class="form-control" id="loesung">
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit">Senden</button>
+            </form>
         </div>
-
-        <!-- Alertbox -->
-        <div id="liveAlertPlaceholder"></div>
-
-        <form id="informatikroom-form">
-            <div class="mb-3">
-                <label for="loesung" class="form-label">Lösung</label>
-                <input class="form-control" id="loesung">
-            </div>
-            <button type="submit" class="btn btn-primary" id="submit">Senden</button>
-        </form>
     </div>
 
     <script>
