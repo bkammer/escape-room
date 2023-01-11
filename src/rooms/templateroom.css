@@ -5,6 +5,10 @@
     width: 100%;
 }
 
+p {
+    padding-top: 1rem;
+}
+
 .fadeout {
     animation: fadeOut ease 5s;
     -webkit-animation: fadeOut ease 5s;

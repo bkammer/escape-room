@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/rooms/templateroom.css">
+    <link rel="stylesheet" href="./room-5/room-5.css">
+    <script defer src="/coin.js"></script>
+    <script defer src="/timer.js"></script>
+    <script defer src="room-5/validation.js"></script>
+    <script defer src="/rooms/roomstatus.js"></script><!-- call setRoomStatusDone() in login_validation.js -->
+    <title>Escape Room</title>
+</head>
+
+<body>
+    <!-- Navbar mit Zurueck Button -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <button type="button" class="btn btn-light" onclick="location.href = '/home.html';">
+                Zurück
+            </button>
+
+            <div class="d-inline-flex flex-column">
+                <div class="d-inline-flex justify-content-end align-items-center">
+                    <i class="bi bi-stopwatch"></i>
+                    <a class="nav-link disabled mx-2" href="#" tabindex="-1" aria-disabled="true" id="timer">--d --h --m
+                        --s</a>
+                </div>
+
+                <div class="d-inline-flex justify-content-end align-items-center">
+                    <i class="bi bi-coin"></i>
+                    <a class="nav-link disabled mx-2" href="#" tabindex="-1" aria-disabled="true" id="coins">--</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="m-3">
+
+        <!-- Flexbox Vertikal -->
+        <div class="d-flex flex-column m-5">
+
+            <h1>Mathe Runen</h1>
+
+            <p>
+                Deine Schritte hallen, als du den Saal betrittst. Er ist riesig. Die Decke schwebt in 6 Metern Höhe,
+                getragen von baumbreiten Säulen aus grobem Stein. Fackeln an manchen der Säulen erleuchten Teile des
+                Saals
+                spärlich. Genauer wird nur ein Pfad vor dir links und rechts von Fackeln erleuchtet. Du gehst diesen
+                Pfad
+                entlang, bis du vor einer Wand stehst. Auf der Wand erkennst du mehrere, auffällige Felder, die in einer
+                Reihe stehen. Der Großteil von ihnen zeigt nichts an. Nur auf den ganz linken 5 Kacheln steht etwas:
+            </p>
+
+            <span class="term">
+                5 - 4 = 9
+            </span>
+
+            <p>
+                Mit dem Term kannst du wenig anfangen. In der Wand, unter den Kacheln mit den Rechenzeichen, sind
+                steinerne
+                Hebel angebracht. Du betätigst den Hebel links außen. Der Inhalt eines Feldes ändert sich:
+            </p>
+
+            <span class="term">
+                5 * 4 = 9
+            </span>
+
+            <p>
+                Neugierig betätigst du den Hebel mehrere Male. Auf den Feldern der Wand steht:
+            </p>
+
+            <!-- Flexbox Horizontal -->
+            <div class="d-flex flex-row mb-3">
+                <span class="term p-2">
+                    5 / 4 = 9
+                </span>
+
+                <span class="term p-2">
+                    5 + 4 = 9
+                </span>
+            </div>
+
+            <p>
+                Ein lautes Grollen durchbricht die vorherige Stille im Raum. Langsam und mit dem knirschenden Geräusch
+                von
+                reibendem Gestein drehen sich die Zahlenfelder auf der Wand. Selbst ein paar Kacheln, die vorher noch
+                nichts
+                angezeigt hatten, besitzen nun ein Zahlensymbol. Nun steht an der Wand:
+            </p>
+
+            <span class="term">
+                5 + 4 - 9 - 3 = 17
+            </span>
+
+            <form id="loesungform" class="mt-5">
+                <label for="loesung">Lösung</label>
+                <div class="d-flex flex-row mb-3 gap-1">
+                    <input type="input" class="form-control" id="loesung" placeholder="Deine Lösung...">
+                    <button type="submit" id="submit" class="btn btn-primary">Prüfen</button>
+                </div>
+            </form>
+
+        </div>
+
+        <!-- Alertbox -->
+        <div id="liveAlertPlaceholder" class="bottom_fixed"></div>
+
+    </div>
+</body>
+
+<script>
+    // Pruefe Antwort und gebe ein Alert aus
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+    const alert = (message, type) => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+            `<div id="alert" class="alert alert-${type} fadeout" role="alert">`,
+            `${message}`,
+            `</div>`
+
+        ].join('')
+
+        alertPlaceholder.append(wrapper)
+    }
+</script>
+
+</html>

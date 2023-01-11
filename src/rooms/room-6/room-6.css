@@ -1,0 +1,36 @@
+.input_loesung {
+    width: 50%;
+    max-width: 300px;
+}
+
+.input_sudoku {
+    text-align: center;
+}
+
+.container_sudoku {
+    width: 500px;
+    height: 500px;
+}
+
+.col_style {
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    font-weight: bold;
+}
+
+.border_out {
+    border: 1px black solid;
+}
+
+.border_in {
+    border: 1px rgba(0, 0, 0, 0.37) solid;
+}
+
+.important_field {
+    background-color: rgb(248, 123, 123);
+    border: 1px rgb(199, 49, 49) solid;
+}

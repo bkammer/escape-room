@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/rooms/templateroom.css">
+    <link rel="stylesheet" href="./room-6/room-6.css">
+    <script defer src="/coin.js"></script>
+    <script defer src="/timer.js"></script>
+    <script defer src="room-6/validation.js"></script>
+    <script defer src="/rooms/roomstatus.js"></script><!-- call setRoomStatusDone() in login_validation.js -->
+    <title>Escape Room</title>
+</head>
+
+<body>
+    <!-- Navbar mit Zurueck Button -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <button type="button" class="btn btn-light" onclick="location.href = '/home.html';">
+                Zurück
+            </button>
+
+            <div class="d-inline-flex flex-column">
+                <div class="d-inline-flex justify-content-end align-items-center">
+                    <i class="bi bi-stopwatch"></i>
+                    <a class="nav-link disabled mx-2" href="#" tabindex="-1" aria-disabled="true" id="timer">--d --h --m
+                        --s</a>
+                </div>
+
+                <div class="d-inline-flex justify-content-end align-items-center">
+                    <i class="bi bi-coin"></i>
+                    <a class="nav-link disabled mx-2" href="#" tabindex="-1" aria-disabled="true" id="coins">--</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="m-3">
+
+        <!-- Flexbox Vertikal -->
+        <div class="d-flex flex-column m-5">
+
+            <h1>Sudoku</h1>
+
+            <p>
+                In einem Sudoku Rätsel ist eine Telefonnummer versteckt. Finde sie indem du das Sudoku löst:
+            </p>
+
+            <div class="container_sudoku">
+                <div class="row">
+                    <div class="col border_out">
+
+                        <div class="row">
+                            <div class="col col_style border_in">3</div>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <div class="col col_style border_in">7</div>
+                        </div>
+                        <div class="row">
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <div class="col col_style border_in">2</div>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+                        <div class="row">
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <div class="col col_style border_in">9</div>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+
+                    </div>
+
+                    <div class="col border_out">
+
+                        <div class="row">
+                            <div class="col col_style border_in">8</div>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+                        <div class="row">
+                            <div class="col col_style border_in">3</div>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+                        <div class="row">
+                            <div class="col col_style border_in">2</div>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <div class="col col_style border_in">7</div>
+                        </div>
+
+                    </div>
+
+                    <div class="col border_out">
+
+                        <div class="row">
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <div class="col col_style border_in">2</div>
+                            <input class="col col_style border_in input_sudoku important_field"></input>
+                        </div>
+                        <div class="row">
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku important_field"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+                        <div class="row">
+                            <input class="col col_style border_in input_sudoku important_field"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <div class="col col_style border_in">1</div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col border_out">
+
+                        <div class="row">
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+                        <div class="row">
+                            <div class="col col_style border_in">9</div>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+                        <div class="row">
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <div class="col col_style border_in">1</div>
+                        </div>
+
+                    </div>
+
+                    <div class="col border_out">
+
+                        <div class="row">
+                            <div class="col col_style border_in">7</div>
+                            <div class="col col_style border_in">5</div>
+                            <input class="col col_style border_in input_sudoku important_field"></input>
+                        </div>
+                        <div class="row">
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku important_field"></input>
+                            <div class="col col_style border_in">4</div>
+                        </div>
+                        <div class="row">
+                            <input class="col col_style border_in input_sudoku important_field"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+
+                    </div>
+
+                    <div class="col border_out">
+
+                        <div class="row">
+                            <div class="col col_style border_in">2</div>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+                        <div class="row">
+                            <div class="col col_style border_in">3</div>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <div class="col col_style border_in">6</div>
+                        </div>
+                        <div class="row">
+                            <div class="col col_style border_in">5</div>
+                            <div class="col col_style border_in">4</div>
+                            <div class="col col_style border_in">9</div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col border_out">
+
+                        <div class="row">
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku important_field"></input>
+                        </div>
+                        <div class="row">
+                            <div class="col col_style border_in">6</div>
+                            <input class="col col_style border_in input_sudoku important_field"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+                        <div class="row">
+                            <div class="col col_style border_in important_field">7</div>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <div class="col col_style border_in">3</div>
+                        </div>
+
+                    </div>
+
+                    <div class="col border_out">
+
+                        <div class="row">
+                            <div class="col col_style border_in">4</div>
+                            <div class="col col_style border_in">7</div>
+                            <div class="col col_style border_in">2</div>
+                        </div>
+                        <div class="row">
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+                        <div class="row">
+                            <div class="col col_style border_in">9</div>
+                            <div class="col col_style border_in">8</div>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+
+                    </div>
+
+                    <div class="col border_out">
+
+                        <div class="row">
+                            <div class="col col_style border_in">6</div>
+                            <div class="col col_style border_in">8</div>
+                            <input class="col col_style border_in input_sudoku"></input>
+                        </div>
+                        <div class="row">
+                            <div class="col col_style border_in">7</div>
+                            <div class="col col_style border_in">9</div>
+                            <div class="col col_style border_in">4</div>
+                        </div>
+                        <div class="row">
+                            <input class="col col_style border_in input_sudoku"></input>
+                            <div class="col col_style border_in">5</div>
+                            <div class="col col_style border_in">2</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <form id="loesungform" class="mt-5">
+                <label for="loesung">Lösung</label>
+                <div class="d-flex flex-row mb-3 gap-1">
+                    <input type="input" class="form-control input_loesung" id="loesung" placeholder="Telefonnummer...">
+                    <button type="submit" id="submit" class="btn btn-primary">Prüfen</button>
+                </div>
+            </form>
+
+        </div>
+
+        <!-- Alertbox -->
+        <div id="liveAlertPlaceholder" class="bottom_fixed"></div>
+
+    </div>
+</body>
+
+<script>
+    // Pruefe Antwort und gebe ein Alert aus
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+    const alert = (message, type) => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+            `<div id="alert" class="alert alert-${type} fadeout" role="alert">`,
+            `${message}`,
+            `</div>`
+
+        ].join('')
+
+        alertPlaceholder.append(wrapper)
+    }
+</script>
+
+</html>
