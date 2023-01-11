@@ -2,6 +2,10 @@
 
 \usepackage{graphicx}
 \usepackage{listings}
+\usepackage[margin=2.54cm]{geometry}
+
+\graphicspath{ {./images/} }
+\renewcommand{\figurename}{Grafik}
 
 \renewcommand\maketitle{
     \begin{flushleft}
@@ -15,7 +19,7 @@
 
     \begin{center}
         \textbf{\large Studium Generale: Escape-Room}\\
-        Dokumentation: Chemieroom
+        Dokumentation: Informatik-Raum-2
     \end{center}
 
     \rule{\linewidth}{0.1mm}
@@ -27,7 +31,7 @@
 
 \maketitle
 
-\section{Aufsetzen des digitalen Escape-Rooms}
+\section{Digitalen Escape-Room aufsetzen}
 \subsection{Komponenten}
 
 \begin{itemize}
@@ -35,7 +39,7 @@
     \item Mikro-SD Karte
 	\item Computer Maus
 	\item Mikro-HDMI auf HDMI Kabel
-	\item Monitor
+	\item Monitor / Bildschirm
     \item Computer mit SD-Kartensteckplatz
 \end{itemize}
 
@@ -43,26 +47,23 @@
 
 Installiere den Raspberry Pi Imager\footnote{https://www.raspberrypi.com/software/} auf einem Computer.
 Stecke die SD-Karte in den Computer und öffne den Raspberry Pi Imager.
-Wähle unter "Operating System" das "Raspberry Pi OS (64-Bit)" und unter "Storage" die SD-Karte aus.
+Wähle unter "Operating System" das "Raspberry Pi OS (64-Bit)" und unter "Storage" die eingesteckte SD-Karte aus.
 Klicke anschließend auf "write".
 Ein Tutorial\footnote{https://www.youtube.com/watch?v=ntaXWS8Lk34} von der Raspberry Pi Foundation für die Installation findet sich auf YouTube.
 
 Stecke nach einem erfolgreichen Schreibvorgang die SD-Karte in den Raspberry Pi 400 ein.
 Verbinde ebenfalls die Maus und den Monitor mit dem HDMI-Kabel mit dem Raspberry Pi und verbinde diesen anschließend mit Strom.
-Befolge die folgenden Einrichtungsschritte auf dem Monitor.
-
+Befolge die folgenden Einrichtungsschritte auf dem Bildschirm.
 Verbinde dich mit dem Internet, falls dies noch nicht geschehen ist.
-Öffne das Programm Terminal und führe den folgenden Befehl aus:
-\begin{lstlisting}[language=bash]
-curl -sSL
-https://raw.githubusercontent.com/bkammer/
-escape-room/main/pi-install.sh
-| bash
-\end{lstlisting}
+Öffne das Programm Terminal und führe folgenden Befehl aus:
+
+\begin{verbatim}
+curl -sSL https://raw.githubusercontent.com/bkammer/escape-room/main/pi-install.sh | bash
+\end{verbatim}
 
 Öffne anschließend mit dem Browser des Raspberry Pis die URL: escaperoom.de.
 Diese Adresse ist nur auf dem Raspberry Pi bekannt und zeigt auf den Webserver, der im Hintergrund auf dem Raspberry Pi läuft.
-Damit ist zukünftig keine Internetverbindung mehr notwendig.
+Damit ist zukünftig keine Internetverbindung mehr notwendig, um den digitalen Escaperoom zu spielen.
 
 \section{Durchführung}
 \subsection{Komponenten}
@@ -78,18 +79,50 @@ Damit ist zukünftig keine Internetverbindung mehr notwendig.
 \subsection{Ausgangszustand}
 
 Für die Durchführung als Rätsel im Escape-Room sind diese Teile bereitzustellen.
-Die Komponenten „Herstellung“ wird nur für die Präparation des Raspberry Pis benötigt, welches vorher stattfinden muss.
+Die Komponenten im Abschnitt Herstellung wird nur für die Präparation des Raspberry Pis benötigt, welche vorher stattfinden muss.
 
 \subsection{Spielprinzip}
 
-Auf der Startseite befindet sich ein Startknopf, auf dessen Knopfdruck ein Timer anfängt zu laufen.
-Das Spielprinzip ist es, in dem gefangenen Haus möglichst viele Räume zu lösen, um dabei an Geld zu gelangen, mit dem man sich aus dem Haus freikaufen kann.
+Durch Betätigen des Start-Knopfes auf der Startseite beginnt ein Countdown nach unten zu zählen.
+Innerhalb dieser Zeit müssen verschiedene Räume gelöst werden, um Münzen zu verdienen.
+Besitzt man genügend Münzen, so kann man sich aus dem Escape-Haus freikaufen.
+Schafft man es nicht, bis zum Ablaufen des Countdowns genügend Münzen zu sammeln und sich freizukaufen, so ist man gescheitert.
+
+\subsection{Informatikraum 2}
+
+
 
 \subsection{Erklärung}
 
+Bei der Caesar-Verschlüsselung, auch Verschiebe-Chiffre genannt, werden Texte verschlüsselt, indem man die Buchstaben des geordneten Alphabets um eine bestimmte Anzahl zyklisch verschiebt.
+Eine schematische Darstellung mit der Verschiebung um 3 Buchstaben ist in Grafik \ref{fig:caesar3} dargestellt.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{caesar3}
+    \caption{Schematische Darstellung einer Verschiebe-Chiffre mit Verschiebung um drei Buchstaben (https://de.wikipedia.org/wiki/Caesar-Verschlüsselung)}
+    \label{fig:caesar3}
+\end{figure}
+
 \subsection{Anwendung}
 
+Die Caesar-Verschlüsselung zählt zu einer der unsichersten Verfahren der heutigen Kryptografie.
+Denn diese kann durch eine Häufigkeitsanalyse entschlüsselt werden.
+Dabei werden die einzelnen Buchstaben des verschlüsselten Textes gezählt und ihre Häufigkeit, meist in Prozent, notiert.
+In der deutschen Sprache kommt beispielsweise das E mit ungefähr 17,4 Prozent am häufigsten vor.
+Eine Liste mit der Buchstabenhäufigkeit der deutschen Sprache lässt sich auf Wikipedia\footnote{https://de.wikipedia.org/wiki/Buchstabenhäufigkeit} finden.
+Somit kann auf das verwendete Alphabet geschlossen werden.
+Die Genauigkeit der Häufigkeit steigt mit der Länge des Textes, womit ein langer Text leichter zu entschlüsseln ist als eine kurze.
+Damit dient die Caesar-Verschlüsslung ausschließlich dafür, Grundprinzipien der Kryptografie näherzubringen.
+
 \section{Weiterführende Links und Literatur}
+
+\begin{itemize}
+	\item https://de.wikipedia.org/wiki/Caesar-Verschlüsselung
+    \item https://av.tib.eu/media/19812
+    \item https://de.wikipedia.org/wiki/Häufigkeitsanalyse
+    \item https://de.wikipedia.org/wiki/Buchstabenhöufigkeit
+\end{itemize}
 
 \section{Rätselfrage}
 
