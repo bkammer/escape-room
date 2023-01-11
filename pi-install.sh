@@ -29,17 +29,18 @@ hostname="escaperoom.de"
 HOSTS_LINE="$ipAdrr[[:space:]]$hostname"
 line_content=$( printf "%s\t%s\n" "$ipAdrr" "$hostname" )
 if [ -n "$(grep -P $HOSTS_LINE /etc/hosts)" ]
-    then
-        echo "$line_content already exists : $(grep $hostname /etc/hosts)"
-    else
-        echo "Adding $line_content to your /etc/hosts";
-        sudo -- sh -c -e "echo '$line_content' >> /etc/hosts";
+then
+    echo "$line_content already exists : $(grep $hostname /etc/hosts)"
+else
+    echo "Adding $line_content to your /etc/hosts";
+    sudo -- sh -c -e "echo '$line_content' >> /etc/hosts";
 
-        if [ -n "$(grep -P $HOSTNAME /etc/hosts)" ]
-            then
-                echo "$line_content was added succesfully";
-            else
-                echo "Failed to Add $line_content, Try again!";
-        fi
+    if [ -n "$(grep -P $HOSTNAME /etc/hosts)" ]
+    then
+        echo "$line_content was added succesfully";
+    else
+        echo "Failed to Add $line_content, Try again!";
+    fi
 fi
 
+echo "Done"

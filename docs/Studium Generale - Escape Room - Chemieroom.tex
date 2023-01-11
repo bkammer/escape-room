@@ -1,0 +1,96 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{graphicx}
+\usepackage{listings}
+
+\renewcommand\maketitle{
+    \begin{flushleft}
+        Name: Benjamin Kammer \\
+        MatrNr: 205538
+    \end{flushleft}
+
+    \begin{flushright}\vspace{-15mm}
+        \includegraphics[width=3.1cm]{logo.png}
+    \end{flushright}
+
+    \begin{center}
+        \textbf{\large Studium Generale: Escape-Room}\\
+        Dokumentation: Chemieroom
+    \end{center}
+
+    \rule{\linewidth}{0.1mm}
+
+    \bigskip
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Aufsetzen des digitalen Escape-Rooms}
+\subsection{Komponenten}
+
+\begin{itemize}
+	\item Raspberry Pi 400
+    \item Mikro-SD Karte
+	\item Computer Maus
+	\item Mikro-HDMI auf HDMI Kabel
+	\item Monitor
+    \item Computer mit SD-Kartensteckplatz
+\end{itemize}
+
+\subsection{Präparation des Raspberry Pis}
+
+Installiere den Raspberry Pi Imager\footnote{https://www.raspberrypi.com/software/} auf einem Computer.
+Stecke die SD-Karte in den Computer und öffne den Raspberry Pi Imager.
+Wähle unter "Operating System" das "Raspberry Pi OS (64-Bit)" und unter "Storage" die SD-Karte aus.
+Klicke anschließend auf "write".
+Ein Tutorial\footnote{https://www.youtube.com/watch?v=ntaXWS8Lk34} von der Raspberry Pi Foundation für die Installation findet sich auf YouTube.
+
+Stecke nach einem erfolgreichen Schreibvorgang die SD-Karte in den Raspberry Pi 400 ein.
+Verbinde ebenfalls die Maus und den Monitor mit dem HDMI-Kabel mit dem Raspberry Pi und verbinde diesen anschließend mit Strom.
+Befolge die folgenden Einrichtungsschritte auf dem Monitor.
+
+Verbinde dich mit dem Internet, falls dies noch nicht geschehen ist.
+Öffne das Programm Terminal und führe den folgenden Befehl aus:
+\begin{lstlisting}[language=bash]
+curl -sSL
+https://raw.githubusercontent.com/bkammer/
+escape-room/main/pi-install.sh
+| bash
+\end{lstlisting}
+
+Öffne anschließend mit dem Browser des Raspberry Pis die URL: escaperoom.de.
+Diese Adresse ist nur auf dem Raspberry Pi bekannt und zeigt auf den Webserver, der im Hintergrund auf dem Raspberry Pi läuft.
+Damit ist zukünftig keine Internetverbindung mehr notwendig.
+
+\section{Durchführung}
+\subsection{Komponenten}
+
+\begin{itemize}
+	\item Raspberry Pi 400
+    \item Mikro-HDMI Karte
+	\item Computer Maus
+	\item Mikro-HDMI auf HDMI Kabel
+	\item Monitor
+\end{itemize}
+
+\subsection{Ausgangszustand}
+
+Für die Durchführung als Rätsel im Escape-Room sind diese Teile bereitzustellen.
+Die Komponenten „Herstellung“ wird nur für die Präparation des Raspberry Pis benötigt, welches vorher stattfinden muss.
+
+\subsection{Spielprinzip}
+
+Auf der Startseite befindet sich ein Startknopf, auf dessen Knopfdruck ein Timer anfängt zu laufen.
+Das Spielprinzip ist es, in dem gefangenen Haus möglichst viele Räume zu lösen, um dabei an Geld zu gelangen, mit dem man sich aus dem Haus freikaufen kann.
+
+\subsection{Erklärung}
+
+\subsection{Anwendung}
+
+\section{Weiterführende Links und Literatur}
+
+\section{Rätselfrage}
+
+\end{document}
