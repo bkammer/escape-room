@@ -1,0 +1,24 @@
+input {
+    width: 50%;
+    max-width: 300px;
+}
+
+.gedicht {
+    font-style: italic;
+    list-style-type: none;
+    background-color: antiquewhite;
+    width: fit-content;
+    padding: 1rem 2rem;
+}
+
+#controllerkreuz {
+    width: 20rem;
+    height: auto;
+}
+
+.gcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

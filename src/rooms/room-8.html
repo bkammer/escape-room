@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="/bootstrap-5.2.3-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/rooms/templateroom.css">
+    <link rel="stylesheet" href="./room-8/room-8.css">
+    <script defer src="/coin.js"></script>
+    <script defer src="/timer.js"></script>
+    <script defer src="room-8/validation.js"></script>
+    <script defer src="/rooms/roomstatus.js"></script><!-- call setRoomStatusDone() in login_validation.js -->
+    <title>Escape Room</title>
+</head>
+
+<body>
+    <!-- Navbar mit Zurueck Button -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <button type="button" class="btn btn-light" onclick="location.href = '/home.html';">
+                Zurück
+            </button>
+
+            <div class="d-inline-flex flex-column">
+                <div class="d-inline-flex justify-content-end align-items-center">
+                    <i class="bi bi-stopwatch"></i>
+                    <a class="nav-link disabled mx-2" href="#" tabindex="-1" aria-disabled="true" id="timer">--d --h --m
+                        --s</a>
+                </div>
+
+                <div class="d-inline-flex justify-content-end align-items-center">
+                    <i class="bi bi-coin"></i>
+                    <a class="nav-link disabled mx-2" href="#" tabindex="-1" aria-disabled="true" id="coins">--</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="m-3">
+
+        <!-- Flexbox Vertikal -->
+        <div class="d-flex flex-column m-5">
+
+            <h1>Kunstausstellung</h1>
+
+            <p>
+                Der Raum ist leer, keine Möbel. Nichts. Im starken Kontrast dazu hängen an den Wänden Gemälde von
+                Paaren. Liebende, ineinander verschlungen. Die Bilder sind atemberaubend schön. So detailliert, so
+                aufwendig, so realistisch, als würden die Personen darauf wirklich im Zimmer stehen. Das ist wahre
+                Kunst, denkst du dir. Ein Stuhl hätte dem Zimmer aber auch nicht geschadet, ein Tisch auch nicht oder
+                wenigstens ein Teppich. So stehst du nun mitten auf dem kalten, steinernen Boden, und schaust dich noch
+                ein wenig im Zimmer um. Von den fantastischen Bildern abgelenkt siehst du jetzt erst eine kleine Kiste
+                in der Ecke des Zimmers liegend. Sie hat ein seltsames Schloss, vier Pfeile, die dich an einen Gameboy
+                erinnern. Du drückst auf einen der Pfeile, den der nach oben zeigt, und hörst ein clicken. Du machst
+                weiter und drückst die anderen Pfeile, sie alle geben ein Geräusch von sich, aber die Kiste bleibt
+                verschlossen, ebenso wie sich dein einsames Herz in Angesicht der fabelhaften Bilder von Liebe
+                verschließt. Du suchst ein wenig im Zimmer und siehst schließlich einen Zettel auf dem Boden liegen,
+                darauf steht:
+            </p>
+
+            <div class="gcontainer">
+                <ul class="gedicht">
+                    <li>Niemals habe ich so sehr geliebt</li>
+                    <li>Wie ich dich liebe, mein Schatz</li>
+                    <li>Süß wie Honig, rein wie der Schnee</li>
+                    <li>Oh, wie sehr ich dich brauche, das kannst du sehen</li>
+                    
+                    <br>
+    
+                    <li>Niemals zuvor habe ich so gefühlt</li>
+                    <li>Wie ich es tue, seit ich dich kenne</li>
+                    <li>Sanft wie eine Brise, warm wie die Sonne</li>
+                    <li>Oh, wie sehr ich dich liebe, das weißt du doch</li>
+    
+                    <br>
+    
+                    <li>Niemals zuvor habe ich so gehofft</li>
+                    <li>Wie ich es tue, wenn ich an unsere Zukunft denke</li>
+                    <li>Sicher und geborgen, glücklich und vereint</li>
+                    <li>Oh, wie sehr ich dich begehre, das spüre ich tief in mir</li>
+    
+                    <br>
+    
+                    <li>Niemals zuvor habe ich mich so gefreut</li>
+                    <li>Wie ich es tue, wenn ich an unsere gemeinsame Zeit denke</li>
+                    <li>Süße Erinnerungen, kostbare Augenblicke</li>
+                    <li>Oh, wie sehr ich dich schätze, das weißt du genau</li>
+                </ul>
+
+                <img id="controllerkreuz" src="../images/controllerkreuz.png">
+            </div>
+
+            <p>
+                Das war es, mehr findest du nicht mehr im Raum, damit wirst du wohl auskommen müssen. Wie findest du
+                jetzt die richtige Kombination, in der die pfeilförmigen Knöpfe gedrückt werden sollen?
+            </p>
+
+            <form id="loesungform" class="mt-5">
+                <label for="loesung">Zahlencode:</label>
+                <div class="d-flex flex-row mb-3 gap-1">
+                    <input type="input" class="form-control input_loesung" id="loesung"
+                        placeholder="Der Code lautet...">
+                    <button type="submit" id="submit" class="btn btn-primary">Prüfen</button>
+                </div>
+            </form>
+
+        </div>
+
+        <!-- Alertbox -->
+        <div id="liveAlertPlaceholder" class="bottom_fixed"></div>
+
+    </div>
+</body>
+
+<script>
+    // Pruefe Antwort und gebe ein Alert aus
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+    const alert = (message, type) => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+            `<div id="alert" class="alert alert-${type} fadeout" role="alert">`,
+            `${message}`,
+            `</div>`
+
+        ].join('')
+
+        alertPlaceholder.append(wrapper)
+    }
+</script>
+
+</html>

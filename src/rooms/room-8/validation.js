@@ -8,7 +8,7 @@ cform.addEventListener("submit", (e) => {
   checkResult = checkResult.replace(/\s/g, '');
   console.log(checkResult);
 
-  if (checkResult === "5*4-9/3=17" || checkResult === "5+4*9/3=17" || checkResult === "5*4-9/3" || checkResult === "5+4*9/3") {
+  if (checkResult === "1423142314231423" || checkResult === "1423") {
     var oldAlert = document.getElementById("alert");
 
     if (oldAlert !== null) oldAlert.remove();
