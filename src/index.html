@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/home.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script defer src="/coin.js"></script><!-- call initCoins() in index.js -->
-    <script defer src="/timer.js"></script><!-- call setStartTimeNow()() in index.js -->
+    <script defer src="/countdown.js"></script><!-- call setStartTimeNow()() in index.js -->
     <script defer src="/rooms/roomstatus.js"></script><!-- call initRoomStatus() in index.js -->
     <script defer src="/index.js"></script>
     <title>Escape Room</title>
@@ -29,7 +29,7 @@
             <div class="d-inline-flex flex-column">
                 <div class="d-inline-flex justify-content-end align-items-center">
                     <i class="bi bi-stopwatch"></i>
-                    <a class="nav-link disabled mx-2" href="#" tabindex="-1" aria-disabled="true" id="timer">--d --h --m
+                    <a class="nav-link disabled mx-2" href="#" tabindex="-1" aria-disabled="true" id="countdown">--d --h --m
                         --s</a>
                 </div>
 
@@ -66,7 +66,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-primary m-3" onclick="startTimer()" id="start-btn">Start</button>
+            <button type="button" class="btn btn-primary m-3" onclick="startCountdown()" id="start-btn">Start</button>
         </div>
     </div>
 
