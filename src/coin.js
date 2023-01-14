@@ -18,7 +18,7 @@ function setCoins(coins) {
 function addCoins(coins) {
   window.localStorage.setItem(
     "coins",
-    window.localStorage.getItem("coins") + coins
+    parseInt(window.localStorage.getItem("coins")) + coins
   );
 }
 
