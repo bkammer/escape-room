@@ -16,6 +16,7 @@
     <script defer src="/coin.js"></script><!-- update coins-->
     <script defer src="/timer.js"></script><!-- update timer -->
     <script defer src="/rooms/roomstatus.js"></script><!-- call setRoomStatusDone() in login_validation.js -->
+    <script defer src="/rooms/room-1/validation.js"></script>
     <title>Escape Room</title>
 </head>
 
@@ -43,30 +44,67 @@
         </div>
     </nav>
     <div class="mx-3">
-        <h1>Informatik Room</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt officia aperiam ex iste modi laboriosam
-            aliquam eum explicabo, quasi pariatur quisquam quis amet, numquam accusamus dolore commodi omnis reiciendis
-            asperiores corporis placeat inventore sint illum! Voluptates, cupiditate, autem commodi officia quasi porro
-            dolor, quibusdam doloremque minus inventore numquam fugit officiis?
-        </p>
+        <!-- Flexbox Vertikal -->
+        <div class="d-flex flex-column m-5">
+            <h1>Informatikraum 2</h1>
+            <p>
+                Marmorböden glänzen dir entgegen, hell erleuchtet von mehreren Fackeln, die im Zimmer aufgestellt
+                wurden. Massive Marmorsäulen stützen die Decke, die hoch über dir schwebt. In der Mitte des Raums steht
+                eine überlebensgroße Statue eines Mannes. Er trägt eine römische Rüstung und einen Lorbeerkranz auf dem
+                Kopf. Du verstehst nicht ganz, warum er Gewürze auf dem Kopf trägt, gehst aber neugierig näher. Du hast
+                bereits eine Vermutung, um wen es sich hier handeln könnte. Ein goldenes Schild am Sockel bestätigt
+                deine Vermutungen.
+            </p>
+            <div class="shadow p-3 mb-2 bg-body rounded">
+                Gaius Julius Caesar<br>
+                Gestorben am 15. März 44 v. Chr.
+            </div>
+            <p>
+                In seiner Hand hält die Statue einen Zettel. Du liest darauf:
+            </p>
+            <div class="shadow p-3 mb-2 bg-body rounded">
+                Stg Rdst, stc sj hjrwhi, apjiti qgjijh.
+            </div>
+            <p>
+                Enttäuscht über den Buchstabensalat drehst du den Zettel um. Dort steht:
+            </p>
+            <div class="shadow p-3 mb-2 bg-body rounded">
+                Kgddlwf Kaw owalwjzaf fguz sf sfvwjwf ewafwj ajvakuzwf Jwauzlmwewj aflwjwkkawjl kwaf, kg twvawfw vauz.
+                Rme gwxxfwf vwk Kuzdgkkwk eükkwf Kaw vsk Vslme ewafwj Ywtmjl wafywtwf: 5741544
+            </div>
+            <p>
+                Das hilft dir auch nicht weiter. Da muss doch noch mehr sein! Nach etwas Suchen findest du hinter einem
+                Vorhang versteckt eine weitere, große Kiste, mit einem Zahlenschloss. Das Zahlenschloss hat 7 Ziffern,
+                zu viele Möglichkeiten für Brute Force. Du probierst den Code, der auf der Rückseite steht: 5741544.
+                Nichts passiert. Na toll, wie machst du jetzt weiter?
+            </p>
 
-        <!-- Alertbox -->
-        <div id="liveAlertPlaceholder"></div>
+            <!-- Alertbox -->
+            <div id="liveAlertPlaceholder"></div>
 
-        <script>
-            // Pruefe Antwort und gebe ein Alert aus
-            const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-            const alert = (message, type) => {
-                const wrapper = document.createElement('div')
-                wrapper.innerHTML = [
-                    `<div id="alert" class="alert alert-${type} fadeout" role="alert">`,
-                    `${message}`,
-                    `</div>`
-                ].join('')
-                alertPlaceholder.append(wrapper)
-            }
-        </script>
+            <form id="informatikroom-form">
+                <div class="mb-3">
+                    <label for="loesung" class="form-label">Lösung</label>
+                    <input class="form-control" id="loesung">
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit">Senden</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Alert script
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        const alert = (message, type) => {
+            const wrapper = document.createElement('div')
+            wrapper.innerHTML = [
+                `<div id="alert" class="alert alert-${type} fadeout" role="alert">`,
+                `${message}`,
+                `</div>`
+            ].join('')
+            alertPlaceholder.append(wrapper)
+        }
+    </script>
 </body>
 
 </html>
