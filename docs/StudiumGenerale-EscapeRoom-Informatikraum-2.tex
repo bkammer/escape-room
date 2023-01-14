@@ -1,0 +1,163 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[margin=2.54cm]{geometry}
+
+\graphicspath{ {./images/} }
+\renewcommand{\figurename}{Grafik}
+
+\renewcommand\maketitle{
+    \begin{flushleft}
+        Name: Benjamin Kammer \\
+        MatrNr: 205538
+    \end{flushleft}
+
+    \begin{flushright}\vspace{-15mm}
+        \includegraphics[width=3.1cm]{logo.png}
+    \end{flushright}
+
+    \begin{center}
+        \textbf{\large Studium Generale: Escape-Room}\\
+        Dokumentation: Informatikraum 2
+    \end{center}
+
+    \rule{\linewidth}{0.1mm}
+
+    \bigskip
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Digitalen Escape-Room aufsetzen}
+\subsection{Komponenten}
+
+\begin{itemize}
+	\item Raspberry Pi 400
+    \item Mikro-SD Karte
+	\item Computer-Maus
+	\item Mikro-HDMI auf HDMI Kabel
+	\item Monitor/Bildschirm
+    \item Computer mit SD-Kartensteckplatz
+\end{itemize}
+
+Die meisten Komponenten können als Raspberry Pi Kit\footnote{https://www.welectron.com/Raspberry-Pi-400-Computer-Kit-DE?src=raspberrypi} bei Welectron gekauft werden.
+
+\subsection{Präparation des Raspberry Pis}
+
+Installiere den Raspberry Pi Imager\footnote{https://www.raspberrypi.com/software/} auf einem Computer.
+Stecke die SD-Karte in den Computer und öffne den Raspberry Pi Imager.
+Wähle unter "Operating System" das "Raspberry Pi OS (64-Bit)" und unter "Storage" die eingesteckte SD-Karte aus.
+Klicke anschließend auf "write".
+Ein Tutorial\footnote{https://www.youtube.com/watch?v=ntaXWS8Lk34} von der Raspberry Pi Foundation für die Installation findet sich auf YouTube.
+
+Stecke nach einem erfolgreichen Schreibvorgang die SD-Karte in den Raspberry Pi 400 ein.
+Verbinde ebenfalls die Maus und den Monitor mit dem HDMI-Kabel mit dem Raspberry Pi und verbinde diesen anschließend mit einer Stromquelle.
+Befolge die folgenden Einrichtungsschritte auf dem Bildschirm.
+Verbinde dich mit dem Internet, falls dies noch nicht geschehen ist.
+Öffne das Programm Terminal und führe folgenden Befehl aus:
+
+\begin{verbatim}
+curl -sSL https://raw.githubusercontent.com/bkammer/escape-room/main/pi-install.sh | bash
+\end{verbatim}
+
+Öffne anschließend mit dem Browser des Raspberry Pis die URL: escaperoom.de.
+Diese Adresse ist nur auf dem Raspberry Pi bekannt und zeigt auf den Webserver, der im Hintergrund auf dem Raspberry Pi läuft.
+Damit ist zukünftig keine Internetverbindung mehr notwendig, um den digitalen Escaperoom zu spielen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Durchführung}
+\subsection{Komponenten}
+
+\begin{itemize}
+	\item Raspberry Pi 400
+    \item Mikro-HDMI Karte
+	\item Computer Maus
+	\item Mikro-HDMI auf HDMI Kabel
+	\item Monitor/Bildschirm
+\end{itemize}
+
+\subsection{Ausgangszustand}
+
+Für die Durchführung als Rätsel im Escape-Room sind diese Teile bereitzustellen.
+Die Komponenten im Abschnitt Herstellung wird nur für die Präparation des Raspberry Pis benötigt, welche vorher stattfinden muss.
+
+\subsection{Spielprinzip}
+
+Durch Betätigen des Start-Knopfes auf der Startseite beginnt ein Countdown nach unten zu zählen.
+Innerhalb dieser Zeit müssen verschiedene Räume gelöst werden, um Münzen zu verdienen.
+Besitzt man genügend Münzen, so kann man sich aus dem Escape-Haus freikaufen.
+Schafft man es nicht, bis zum Ablaufen des Countdowns genügend Münzen zu sammeln und sich freizukaufen, so ist man gescheitert.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Informatikraum 2}
+
+\subsection{Erklärung}
+
+Bei der Caesar-Verschlüsselung, auch Verschiebe-Chiffre genannt, werden Texte verschlüsselt, indem man die Buchstaben des geordneten Alphabets um eine bestimmte Anzahl zyklisch verschiebt.
+Eine schematische Darstellung mit der Verschiebung um 3 Buchstaben ist in Grafik \ref{fig:caesar3} dargestellt.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{caesar3}
+    \caption{Schematische Darstellung einer Verschiebe-Chiffre mit Verschiebung um drei Buchstaben (Quelle: https://de.wikipedia.org/wiki/Caesar-Verschlüsselung)}
+    \label{fig:caesar3}
+\end{figure}
+
+\subsection{Anwendung}
+
+Die Caesar-Verschlüsselung zählt zu einer der unsichersten Verfahren der heutigen Kryptografie.
+Denn diese kann durch eine Häufigkeitsanalyse entschlüsselt werden.
+Dabei werden die einzelnen Buchstaben des verschlüsselten Textes gezählt und ihre Häufigkeit, meist in Prozent, notiert.
+In der deutschen Sprache kommt beispielsweise das E mit ungefähr 17,4 Prozent am häufigsten vor.
+Eine Liste mit der Buchstabenhäufigkeit der deutschen Sprache lässt sich auf Wikipedia\footnote{https://de.wikipedia.org/wiki/Buchstabenhäufigkeit} finden.
+Somit kann auf das verwendete Alphabet geschlossen werden.
+Die Genauigkeit der Häufigkeit steigt mit der Länge des Textes, womit ein langer Text leichter zu entschlüsseln ist als eine kurze.
+Damit dient die Caesar-Verschlüsslung ausschließlich dafür, Grundprinzipien der Kryptografie näherzubringen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rätselfrage}
+
+ Marmorböden glänzen dir entgegen, hell erleuchtet von mehreren Fackeln, die im Zimmer aufgestellt wurden.
+ Massive Marmorsäulen stützen die Decke, die hoch über dir schwebt.
+ In der Mitte des Raums steht eine überlebensgroße Statue eines Mannes.
+ Er trägt eine römische Rüstung und einen Lorbeerkranz auf dem Kopf.
+ Du verstehst nicht ganz, warum er Gewürze auf dem Kopf trägt, gehst aber neugierig näher.
+ Du hast bereits eine Vermutung, um wen es sich hier handeln könnte.
+ Ein goldenes Schild am Sockel bestätigt deine Vermutungen. \\
+
+\noindent Gaius Julius Caesar. \\
+Gestorben am 15. März 44 v. Chr. \\
+
+\noindent In seiner Hand hält die Statue einen Zettel. Du liest darauf: \\
+
+\noindent Stg Rdst, stc sj hjrwhi, apjiti qgjijh. \\
+
+\noindent Enttäuscht über den Buchstabensalat drehst du den Zettel um. \\
+Dort steht: \\
+
+\noindent Kgddlwf Kaw owalwjzaf fguz sf sfvwjwf ewafwj ajvakuzwf Jwauzlmwewj aflwjwkkawjl kwaf, kg twvawfw vauz. Rme gwxxfwf vwk Kuzdgkkwk eükkwf Kaw vsk Vslme ewafwj Ywtmjl wafywtwf: 5741544 \\
+
+\noindent Das hilft dir auch nicht weiter.
+Da muss doch noch mehr sein!
+Nach etwas Suchen findest du hinter einem Vorhang versteckt eine weitere, große Kiste, mit einem Zahlenschloss.
+Das Zahlenschloss hat 7 Ziffern, zu viele Möglichkeiten für Brute Force.
+Du probierst den Code, der auf der Rückseite steht: 5741544.
+Nichts passiert.
+Na toll, wie machst du jetzt weiter? \\
+
+\noindent Lösung:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Weiterführende Links und Literatur}
+
+\begin{itemize}
+	\item https://de.wikipedia.org/wiki/Caesar-Verschlüsselung
+    \item https://av.tib.eu/media/19812
+    \item https://de.wikipedia.org/wiki/Häufigkeitsanalyse
+    \item https://de.wikipedia.org/wiki/Buchstabenhöufigkeit
+\end{itemize}
+
+\end{document}
