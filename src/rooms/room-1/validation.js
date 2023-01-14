@@ -12,7 +12,7 @@ cform.addEventListener("submit", (e) => {
 
     if (oldAlert !== null) oldAlert.remove();
 
-    setRoomStatusDone(8);
+    setRoomStatusDone(1);
 
     // Erstelle neuen Alert und entferne ihn nach 5 Sekunden
     alert("Well done!", "success");
