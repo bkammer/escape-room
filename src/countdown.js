@@ -21,7 +21,7 @@ var x = setInterval(function () {
 
   if (distance < 0) {
     // If time is up
-    window.location.assign("/end.html");
+    window.location.assign("/game-over.html");
     window.localStorage.removeItem("endDate");
   }
 
