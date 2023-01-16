@@ -46,28 +46,30 @@
         </div>
     </nav>
     <div class="mx-3">
-        <h1>Chemie</h1>
-        <p>Aufgabenstellung:</p>
+        <!-- Flexbox Vertikal -->
+        <div class="d-flex flex-column m-5">
+            <h1>Chemie</h1>
 
-        <img src="/rooms/room-3/periodensystem.png" class="img-fluid" alt="periodensystem">
+            <img src="/rooms/room-3/periodensystem.png" class="img-fluid" alt="periodensystem">
 
-        <div class="postit">
-            <h1></h1>
-            <p>21 18 39</p>
-            <p></p>
-        </div>
-
-        <!-- Alertbox -->
-        <div id="liveAlertPlaceholder" class="bottom_fixed"></div>
-
-        <form id="chemieform">
-            <div class="mb-3">
-                <label for="loesung" class="form-label">Lösung</label>
-                <input class="form-control" id="loesung">
+            <div class="postit">
+                <h1></h1>
+                <p>21 18 39</p>
+                <p></p>
             </div>
 
-            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-        </form>
+            <!-- Alertbox -->
+            <div id="liveAlertPlaceholder" class="bottom_fixed"></div>
+
+            <form id="chemieform">
+                <div class="mb-3">
+                    <label for="loesung" class="form-label">Lösung</label>
+                    <input class="form-control" id="loesung">
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+            </form>
+        </div>
     </div>
 
     <script>
