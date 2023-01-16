@@ -16,6 +16,7 @@
     <script defer src="/coin.js"></script><!-- update coins-->
     <script defer src="/countdown.js"></script><!-- update countdown -->
     <script defer src="/rooms/roomstatus.js"></script><!-- call setRoomStatusDone() in login_validation.js -->
+    <script defer src="/rooms/room-0/validation.js"></script>
     <title>Escape Room</title>
 </head>
 
@@ -103,9 +104,66 @@
                 Vielleicht solltes du es nochmals nachlesen, bevor du weitermachst.
             </p>
         </div>
+        <div class="container text-center mt-5">
+            <div class="row">
+
+                <div class="col" onclick="zimmer1()">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/rooms/room-0/roomdoor.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="d-inline-flex">
+                                <h5 class="card-text">Zimmer 1</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" onclick="zimmer2()">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/rooms/room-0/roomdoor.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="d-inline-flex">
+                                <h5 class="card-text">Zimmer 2</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" onclick="zimmer3()">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/rooms/room-0/roomdoor.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="d-inline-flex">
+                                <h5 class="card-text">Zimmer 3</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" onclick="zimmer4()">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/rooms/room-0/roomdoor.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="d-inline-flex">
+                                <h5 class="card-text">Zimmer 4</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <form id="biologieroom-form">
+            <div class="mb-3">
+                <label for="loesung" class="form-label">Code</label>
+                <input class="form-control" id="loesung">
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit">Bestätigen</button>
+        </form>
 
         <!-- Alertbox -->
-        <div id="liveAlertPlaceholder"></div>
+        <div id="liveAlertPlaceholder" class="bottom_fixed"></div>
 
         <script>
             // Pruefe Antwort und gebe ein Alert aus
