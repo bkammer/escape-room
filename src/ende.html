@@ -29,8 +29,8 @@
             <div class="d-inline-flex flex-column">
                 <div class="d-inline-flex justify-content-end align-items-center">
                     <i class="bi bi-stopwatch"></i>
-                    <a class="nav-link disabled mx-2" href="#" tabindex="-1" aria-disabled="true" id="countdown">--d --h --m
-                        --s</a>
+                    <a class="nav-link disabled mx-2" href="#" tabindex="-1" aria-disabled="true" id="countdown">--d --h
+                        --m --s</a>
                 </div>
 
                 <div class="d-inline-flex justify-content-end align-items-center">
@@ -48,24 +48,23 @@
             <p>
                 Du denkst, du hast genügend Coins erreicht und willst das Haus endlich verlassen?
             </p>
-
-            <button type="button" class="btn btn-light mb-2" onclick="location.href = '/home.html';">
+            <button type="button" class="btn btn-light my-2" onclick="location.href = '/home.html';">
                 Zurück
             </button>
-            <button type="button" class="btn btn-primary mb-2" onclick="checkcoinnumber()">
+            <button type="button" class="btn btn-primary my-2" onclick="checkcoinnumber()">
                 Überprüfen
             </button>
         </div>
 
+        <button type="button" class="btn btn-primary my-2" onclick="location.href = '/index.html';">
+            Spiel Neustart
+        </button>
+
         <!-- Alertbox -->
         <div id="liveAlertPlaceholder"></div>
-        
+
         <div id="leave-success">
             <img src="/images/opendoor.jpg" class="card-img-top" alt="...">
-
-            <button type="button" class="btn btn-primary my-2" onclick="location.href = '/index.html';">
-                Neu Start
-            </button>
         </div>
 
         <script>

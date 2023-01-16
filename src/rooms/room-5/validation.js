@@ -29,9 +29,10 @@ cform.addEventListener("submit", (e) => {
     if (oldAlert !== null) oldAlert.remove();
 
     setRoomStatusDone(5);
+    addCoins(200);
 
     // Erstelle neuen Alert und entferne ihn nach 5 Sekunden
-    alert("Well done!", "success");
+    alert("Nicht schlecht!", "success");
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
       currentAlert.remove();
@@ -43,7 +44,7 @@ cform.addEventListener("submit", (e) => {
     if (oldAlert !== null) oldAlert.remove();
 
     // Erstelle neuen Alert und entferne ihn nach 5 Sekunden
-    alert("Sorry, wrong solution!", "danger");
+    alert("Sorry, leider falsch!", "danger");
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
       currentAlert.remove();

@@ -26,8 +26,8 @@ cform.addEventListener("submit", (e) => {
     var oldAlert = document.getElementById("alert");
     if (oldAlert !== null) oldAlert.remove();
     setRoomStatusDone(1);
-    addCoins(100);
-    alert("Well done!", "success");
+    addCoins(200);
+    alert("Sehr gut!", "success");
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
       currentAlert.remove();

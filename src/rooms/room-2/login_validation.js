@@ -48,6 +48,7 @@ winloginform.addEventListener("submit", (e) => {
     if (oldAlert !== null) oldAlert.remove();
 
     setRoomStatusDone(2);
+    addCoins(200);
 
     // Erstelle neuen Alert und entferne ihn nach 5 Sekunden
     alert("Nice, du hast dich in den Laptop gehackt!", "success");
