@@ -42,29 +42,32 @@
         </div>
     </nav>
     <div class="mx-3">
+        <!-- Flexbox Vertikal -->
+        <div class="d-flex flex-column m-5">
 
-        <div id="leave-fail">
-            <h1>Haus der Rätsel verlassen</h1>
-            <p>
-                Du denkst, du hast genügend Coins erreicht und willst das Haus endlich verlassen?
-            </p>
-            <button type="button" class="btn btn-light my-2" onclick="location.href = '/home.html';">
-                Zurück
+            <div id="leave-fail">
+                <h1>Haus der Rätsel verlassen</h1>
+                <p>
+                    Du denkst, du hast genügend Coins erreicht und willst das Haus endlich verlassen?
+                </p>
+                <button type="button" class="btn btn-light my-2" onclick="location.href = '/home.html';">
+                    Zurück
+                </button>
+                <button type="button" class="btn btn-primary my-2" onclick="checkcoinnumber()">
+                    Überprüfen
+                </button>
+            </div>
+
+            <button type="button" class="btn btn-primary my-2" onclick="location.href = '/index.html';">
+                Spiel Neustart
             </button>
-            <button type="button" class="btn btn-primary my-2" onclick="checkcoinnumber()">
-                Überprüfen
-            </button>
-        </div>
 
-        <button type="button" class="btn btn-primary my-2" onclick="location.href = '/index.html';">
-            Spiel Neustart
-        </button>
+            <!-- Alertbox -->
+            <div id="liveAlertPlaceholder" class="bottom_fixed"></div>
 
-        <!-- Alertbox -->
-        <div id="liveAlertPlaceholder" class="bottom_fixed"></div>
-
-        <div id="leave-success">
-            <img src="/images/opendoor.jpg" class="card-img-top" alt="...">
+            <div id="leave-success">
+                <img src="/images/opendoor.jpg" class="card-img-top" alt="...">
+            </div>
         </div>
 
         <script>
