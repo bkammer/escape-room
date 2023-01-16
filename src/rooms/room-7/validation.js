@@ -29,7 +29,7 @@ cform.addEventListener("submit", (e) => {
     if (oldAlert !== null) oldAlert.remove();
 
     setRoomStatusDone(7);
-    addCoins(200);
+    addCoins(100);
 
     // Erstelle neuen Alert und entferne ihn nach 5 Sekunden
     alert("Wunderbar!", "success");
