@@ -22,7 +22,7 @@ cform.addEventListener("submit", (e) => {
     return;
   }
 
-  if (input1.value === "1307100") {
+  if (input1.value === "brutus") {
     var oldAlert = document.getElementById("alert");
     if (oldAlert !== null) oldAlert.remove();
     setRoomStatusDone(1);
