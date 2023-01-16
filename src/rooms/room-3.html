@@ -32,7 +32,8 @@
             <div class="d-inline-flex flex-column">
                 <div class="d-inline-flex justify-content-end align-items-center">
                     <i class="bi bi-stopwatch"></i>
-                    <a class="nav-link disabled mx-2" href="#" tabindex="-1" aria-disabled="true" id="countdown">--d --h --m
+                    <a class="nav-link disabled mx-2" href="#" tabindex="-1" aria-disabled="true" id="countdown">--d --h
+                        --m
                         --s</a>
                 </div>
 
@@ -48,9 +49,6 @@
         <h1>Chemie</h1>
         <p>Aufgabenstellung:</p>
 
-        <!-- Alertbox -->
-        <div id="liveAlertPlaceholder"></div>
-
         <img src="/rooms/room-3/periodensystem.png" class="img-fluid" alt="periodensystem">
 
         <div class="postit">
@@ -59,11 +57,15 @@
             <p></p>
         </div>
 
+        <!-- Alertbox -->
+        <div id="liveAlertPlaceholder"></div>
+
         <form id="chemieform">
             <div class="mb-3">
                 <label for="loesung" class="form-label">Lösung</label>
                 <input class="form-control" id="loesung">
             </div>
+
             <button type="submit" class="btn btn-primary" id="submit">Submit</button>
         </form>
     </div>
