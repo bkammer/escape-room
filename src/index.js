@@ -1,6 +1,6 @@
-function startTimer() {
+function startCountdown() {
   initCoins();
-  setStartTimeNow();
+  setEndTime();
   initRoomStatus();
   window.location.assign("/home.html");
 }

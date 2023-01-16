@@ -1,22 +1,29 @@
-function removeTimer() {
-  window.localStorage.removeItem("startDate");
-  document.getElementById("timer").innerHTML = "--d --h --m --s";
+function removeCountdown() {
+  window.localStorage.removeItem("endDate");
+  document.getElementById("countdown").innerHTML = "--d --h --m --s";
 }
 
-function setStartTimeNow() {
-  window.localStorage.setItem("startDate", new Date().getTime());
+function setEndTime() {
+  var endDate = new Date().getTime() + 60 * 60 * 1000;
+  window.localStorage.setItem("endDate", endDate);
 }
 
 // Update the count down every 1 second
 var x = setInterval(function () {
-  if (window.localStorage.getItem("startDate") === null) {
+  if (window.localStorage.getItem("endDate") === null) {
     return;
   }
   // Get today's date and time
   var now = new Date().getTime();
 
   // Find the distance
-  var distance = now - window.localStorage.getItem("startDate");
+  var distance = window.localStorage.getItem("endDate") - now;
+
+  if (distance < 0) {
+    // If time is up
+    window.location.assign("/game-over.html");
+    window.localStorage.removeItem("endDate");
+  }
 
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -37,6 +44,6 @@ var x = setInterval(function () {
   }
   time = time + seconds + "s ";
 
-  // Display the result in the element with id="timer"
-  document.getElementById("timer").innerHTML = time;
+  // Display the result in the element with id="countdown"
+  document.getElementById("countdown").innerHTML = time;
 }, 1000);
