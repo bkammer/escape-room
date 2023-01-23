@@ -79,7 +79,7 @@ physikcalculateform.addEventListener("submit", (e) => {
     var oldAlert = document.getElementById("alert");
     if (oldAlert !== null) oldAlert.remove();
     // Erstelle neuen Alert und entferne ihn nach 5 Sekunden
-    var message = `Das Volumen der Krone beträgt ${volume} cm³.`;
+    var message = `${volume} cm³ Wasser fließen aus der Wanne.`;
     alert(message, "secondary");
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
