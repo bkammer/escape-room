@@ -15,7 +15,7 @@ cform.addEventListener("submit", (e) => {
     setTimeout(() => {
       currentAlert.remove();
       window.location.assign("/home.html");
-    }, 5000);
+    }, 10000);
     return;
   }
 
@@ -37,7 +37,7 @@ cform.addEventListener("submit", (e) => {
     setTimeout(() => {
       currentAlert.remove();
       window.location.assign("/home.html");
-    }, 5000);
+    }, 10000);
   } else {
     var oldAlert = document.getElementById("alert");
 
@@ -48,6 +48,6 @@ cform.addEventListener("submit", (e) => {
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
       currentAlert.remove();
-    }, 5000);
+    }, 10000);
   }
 });
