@@ -6,7 +6,7 @@
 .input_sudoku {
     text-align: center;
     color: #0d6efd;
-    font-family: FreeMono, NibusMono, "Comic Sans MS", "Comic Sans", 'Chalkboard SE', 'Comic Neue';
+    font-family: FreeMono, NibusMono, "Comic Sans MS", "Comic Sans", 'Chalkboard SE', 'Comic Neue', cursive;
 }
 
 .container_sudoku {
