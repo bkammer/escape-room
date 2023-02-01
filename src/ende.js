@@ -14,7 +14,7 @@ function checkcoinnumber() {
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
       currentAlert.remove();
-    }, 5000);
+    }, 10000);
     leaveSuccess.style.display = "block";
     leaveFail.style.display = "none";
 
@@ -32,6 +32,6 @@ function checkcoinnumber() {
     setTimeout(() => {
       currentAlert.remove();
       window.location.assign("/home.html");
-    }, 5000);
+    }, 10000);
   }
 }

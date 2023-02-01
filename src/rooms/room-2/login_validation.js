@@ -16,7 +16,7 @@ winloginform.addEventListener("submit", (e) => {
     setTimeout(() => {
       currentAlert.remove();
       window.location.assign("/home.html");
-    }, 5000);
+    }, 10000);
     return;
   }
 
@@ -31,7 +31,7 @@ winloginform.addEventListener("submit", (e) => {
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
       currentAlert.remove();
-    }, 5000);
+    }, 10000);
 
   // Check if the right credentials are given
   } else if (username.value === "tom" && password.value === "zufall123") {
@@ -58,7 +58,7 @@ winloginform.addEventListener("submit", (e) => {
     setTimeout(() => {
       currentAlert.remove();
       window.location.assign("/home.html");
-    }, 5000);
+    }, 10000);
 
   // Wrong credentials were inserted
   } else {
@@ -71,6 +71,6 @@ winloginform.addEventListener("submit", (e) => {
     var currentAlert = document.getElementById("alert");
     setTimeout(() => {
       currentAlert.remove();
-    }, 5000);
+    }, 10000);
   }
 });
